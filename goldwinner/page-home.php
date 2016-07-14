@@ -93,7 +93,7 @@
 									$quiz = get_posts($args);
 									if( $quiz ) {
 									?>
-									<div class="margin-top-60"><a href="<?php the_permalink($quiz[0]->ID); ?>" id="home-quiz">Check Your Vita D3 IQ here </a></div>
+									<div class="margin-top-80 margin-sm-top-80"><a href="<?php the_permalink($quiz[0]->ID); ?>" id="home-quiz">Check Your Vita D3 IQ here </a></div>
 									<?php
 									}
 								?>

@@ -1482,18 +1482,20 @@ overflow: hidden;
   width:100%; max-width:425px; height:auto; display:block; border:solid 1px transparent; border-radius:15px; background:url('image/homepage-right-back.png') top center no-repeat; background-size:100% 100%;
 }
 .home-right-content{
-margin:70px 35px 60px 35px;
+margin:90px 35px 60px 35px;
 }
 h1#do-you-know{
 font-size: 50px;
 color:#000;
 font-weight: bold;
+line-height: 38px;
 }
 h1#prec-80{
-
+font-family: Arial;
 font-size:180px;
 color:#fff;
-font-weight: bold;
+font-weight: 900;
+line-height: 150px;
 }
 h1#prec-80 span{
 font-size:60px;
@@ -1501,7 +1503,8 @@ font-size:60px;
 h2#indian-lack{
 font-size:30px;
 color:#000;
-line-height: 0px;
+line-height: 1px;
+margin-top:-20px;
 }
 a#home-quiz{
   padding:20px 0px;
@@ -1550,10 +1553,10 @@ p.content{
 font-size: 15px;
 }  
 h1.side-heading{
-font-size: 25px;
+font-size: 28px;
 }
 h2.side-heading{
-font-size: 20px;
+font-size: 22px;
 }
 .home-left-block{
   margin:50px 10px 80px 10px;
@@ -1563,27 +1566,27 @@ font-size: 20px;
   margin:50px 10px 50px 10px;
 }
 .home-right-content{
-margin:60px 15px 50px 15px;
-
+margin:70px 15px 50px 15px;
+}
+.margin-sm-top-80{
+ margin-top: 50px; 
 }
 h1#do-you-know{
 font-size: 30px;
-color:#000;
-font-weight: bold;
+line-height: 8px;
 }
 h1#prec-80{
-
 font-size:100px;
-color:#fff;
-font-weight: bold;
+line-height: 110px;
 }
 h1#prec-80 span{
 font-size:40px;
 } 
 h2#indian-lack{
 font-size:18px;
-color:#000;
+line-height: 1px;
 }
+
 }
 /*======================================================
          Collapse Styles
