@@ -28,7 +28,8 @@
 							<a href="#" id="tw"><img src="<?php echo get_template_directory_uri(); ?>/image/twitter.png"  class="social" alt="social" title="social" /></a>
 							<a href="#" id="yt"><img src="<?php echo get_template_directory_uri(); ?>/image/yt.png"  class="social" alt="social" title="social" /></a>
 						</div>
-						<p class="small center-small text-center"> Kaleesuwari Refineries Pvt. Ltd. &copy; <?php echo date('Y'); ?> All Rights Reserved.</p>
+						<p class="small center-small text-center large-show"> Kaleesuwari Refineries Pvt. Ltd. &copy; <?php echo date('Y'); ?> All Rights Reserved.</p>
+						<p class="small center-small text-center small-show"> Kaleesuwari Refineries Pvt. Ltd. &copy; <?php echo date('Y'); ?> <br> All Rights Reserved.</p>
 						<p class=" small text-center text-bold center-small">Developed by <a href="http://digitallyinspiredmedia.com/" target="_blank">Digitally Inspired Media</a></p>
 					</div>
 				</div>

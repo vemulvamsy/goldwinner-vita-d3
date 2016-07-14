@@ -31,7 +31,11 @@
 </head>
 
 <body <?php body_class(( array( "pushmenu-push") )); ?>>
-<header class="header">
+<?php if ((is_page("faqs") || is_page("faq-s"))) { ?>
+	<header class="header header-style" >
+<?php } else { ?>
+	<header class="header">
+<?php } ?>
 	<div class="container" id="menu-container">
 		<div id="logo">
 			<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">

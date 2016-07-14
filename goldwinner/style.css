@@ -97,6 +97,15 @@ margin:0px;
 padding:0px;
 }
 
+.row{
+  margin:0;
+}
+@media (max-width: 768px){
+  .row{
+    margin:0;
+  }
+}
+
 a,
 a:active,
 a:hover {
@@ -911,6 +920,22 @@ text-decoration:none;
 p.medium a:hover{
 color:#fff;
 }
+@media (min-width: 768px){
+.large-show{
+display: block;
+}
+.small-show{
+display: none;
+}
+}
+@media (max-width: 768px){
+.large-show{
+display: none;
+}
+.small-show{
+display: block;
+}
+}
 
 /*========================================
 NAVIGATION MENU
@@ -960,6 +985,25 @@ transition: height 0.3s;
 background:transparent;
 margin:0px;
 padding:0px;
+}
+header.header-style{
+width: 100%;
+height: 90px;
+position: fixed;
+top: 0;
+left: 0;
+z-index: 999;
+-webkit-transition: height 0.3s;
+-moz-transition: height 0.3s;
+-ms-transition: height 0.3s;
+-o-transition: height 0.3s;
+transition: height 0.3s; 
+margin:0px;
+padding:0px;  
+background:#f04e23; 
+-webkit-box-shadow: 0px 5px 10px 0px rgba(184,183,180,1);
+-moz-box-shadow: 0px 5px 10px 0px rgba(184,183,180,1);
+box-shadow: 0px 5px 10px 0px rgba(184,183,180,1);
 }
 header div#logo{
 float:left;
@@ -1182,6 +1226,9 @@ right:10px;
 header{
 height: 75px;
 background: #f04e23;
+}
+header.header-style{
+height: 75px;
 }
 header div#logo{
 height: 75px;
@@ -1459,9 +1506,9 @@ a.know-more-button:link{
   font-family: 'Varela Round', sans-serif;
   font-weight: 400;
   border-radius:8px;
-  -webkit-box-shadow: 0px 5px 10px 0px rgba(164,164,161,1);
-  -moz-box-shadow: 0px 5px 10px 0px rgba(164,164,161,1);
-  box-shadow: 0px 5px 10px 0px rgba(164,164,161,1);
+  -webkit-box-shadow: 0px 5px 10px 0px rgba(184,183,180,1);
+  -moz-box-shadow: 0px 5px 10px 0px rgba(184,183,180,1);
+  box-shadow: 0px 5px 10px 0px rgba(184,183,180,1);
 }
 a.know-more-button:hover{
   -webkit-box-shadow: 0px 0px 5px 0px rgba(164,164,161,1);
@@ -1489,7 +1536,7 @@ h1#do-you-know{
 font-size: 50px;
 color:#000;
 font-weight: bold;
-line-height: 38px;
+line-height: 45px;
 }
 h1#prec-80{
 font-family: Arial;
@@ -1499,13 +1546,13 @@ font-weight: 900;
 line-height: 150px;
 }
 h1#prec-80 span{
-font-size:60px;
+font-size:50px;
 } 
 h2#indian-lack{
 font-size:30px;
 color:#000;
-line-height: 1px;
-margin-top:-20px;
+line-height: 28px;
+margin-top:-40px;
 }
 a#home-quiz{
   padding:20px 0px;
@@ -1549,6 +1596,11 @@ a#home-quiz:hover{
   height:100%;
 }
 */
+@media (max-width:768px){
+.home-right-content{
+margin:70px 15px 50px 15px;
+}
+}
 @media (max-width: 550px){
 p.content{
 font-size: 15px;
@@ -1566,9 +1618,7 @@ font-size: 22px;
 .home-right-block{
   margin:50px 10px 50px 10px;
 }
-.home-right-content{
-margin:70px 15px 50px 15px;
-}
+
 .margin-sm-top-80{
  margin-top: 50px; 
 }
@@ -1579,6 +1629,7 @@ line-height: 8px;
 h1#prec-80{
 font-size:100px;
 line-height: 110px;
+font-weight: 900;
 }
 h1#prec-80 span{
 font-size:40px;
@@ -1589,9 +1640,17 @@ line-height: 1px;
 }
 
 }
+
+
 /*======================================================
-         Collapse Styles
+         FAQS PAGE ===  Collapse Styles
 ========================================================*/
+
+#faqs-section{
+margin-top:90px;
+width:100%;
+background: #f7f6f2;
+}
 .accordion1-group { margin: 0 0 30px }
 
 .accordion1-group { margin: 0 }
@@ -1601,42 +1660,69 @@ line-height: 1px;
   width: 90%;
 
 }
-
+h1.side-heading-big{
+font-size: 50px;
+line-height: 45px;  
+}
+.red-under-line-center{
+  width:75px;
+  margin:auto;
+  margin-top:8px;
+  background: #f04e23;
+  height:5px;
+  border-radius: 10px;
+}
 .no-js .accordion1-body { display: block }
 
 .accordion1-body {
   display: none;
   padding: 10px 20px 14px;
-  background-color: #f6f6f6;
+  background-color: transparent;
   border-radius: 0px;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
   margin: 0px 0px 4px 0px;
-  border:solid 1px #999;
+
 }
 
 .accordion1-body > * > .accordion1-body {
-  background-color: #fff;
-  margin: 0
+  background-color: transparent;
+  margin: 0;
+  color: #333;
+  font-size: 16px;
+  font-family: 'Varela Round', sans-serif;
+  font-weight: bold;
+  line-height:20px;
 
 }
 
 .accordion1-header {
-  background: #e7e9ea url("image/accordion1-closed.png") no-repeat 20px center;
+  background: transparent url("image/accordion1-closed.png") no-repeat 0px center;
   margin: 8px 0px 0px 0px;
-  color: #555;
-  padding: 8px 40px;
+  color: #000;
+  padding: 8px 22px;
   cursor: pointer;
   border-radius: 5px;
   position: relative;
+
+  font-size: 18px;
+  font-family: 'Varela Round', sans-serif;
+  font-weight: bold;
+  line-height:25px;
+  -webkit-transition: all 0.3s;
+-moz-transition: all 0.3s;
+-ms-transition: all 0.3s;
+-o-transition: all 0.3s;
+transition: all 0.3s;
 }
 
 .accordion1-header.open {
-  background: #999 url("image/accordion1-opened.png") no-repeat 19px center;
-  color: #fff;
-  border-radius: 0px;
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
+  background: transparent url("image/accordion1-opened.png") no-repeat 0px center;
+  -webkit-transition: all 0.3s;
+-moz-transition: all 0.3s;
+-ms-transition: all 0.3s;
+-o-transition: all 0.3s;
+transition: all 0.3s;
 }
 
 .accordion1-header:last-of-type { margin-bottom: 0 }
@@ -1647,21 +1733,113 @@ line-height: 1px;
   position: absolute;
   right: 6px;
   top: 6px;
-  background: #fff;
+  background: transparent;
   padding: 2px 5px;
-  border-radius: 4px;
   color: #333;
-  font-weight: normal
+  font-size: 16px;
+  font-family: 'Varela Round', sans-serif;
+  font-weight: bold;
+  line-height:20px;
+}
+
+@media (max-width: 600px){
+#faqs-section{
+margin-top:74px;
+}  
+#demo_wrap {
+margin: 30px auto;
+width: 100%;
+}
+h1.side-heading-big{
+font-size: 40px;
+line-height: 35px;  
+}
+.red-under-line-center{
+  width:65px;
+}
+.accordion1-body > * > .accordion1-body {
+  font-size: 13px;
+  line-height:13px;
+}
+.accordion1-body p {
+  font-size: 14px;
+  line-height:18px;
+}
+.accordion1-header {
+  font-size: 16px;
+  line-height:18px;
+}
+.accordion1-header span {
+  font-size: 13px;
+  line-height: 13px;
+}  
 }
 
 
-/*================================================
-quiz-result 
-==================================================*/
-.gauge {
-	width: 250px;
-	height: 250px;
-	display: inline-block;
-	border: 1px solid #ccc;
-	margin: 5px;
+/*======================================================
+         GOLD WINNER VITA D3 PAGE
+========================================================*/
+section#goldwinner-vita-d3-section{
+width:100%;
+background: #f7f6f2;
+}
+.disp-left p{
+text-align: left;
+color: #222;
+font-size: 18px;
+font-family: 'Varela Round', sans-serif;
+line-height:29px;
+margin-top: 20px;
+}
+.disp-right p{
+text-align: right;
+color: #222;
+font-size: 18px;
+font-family: 'Varela Round', sans-serif;
+line-height:29px;
+margin-top: 20px;
+}
+.post-thumbnail-image{
+  width:75%;
+  max-width:250px;
+  height: auto;
+  margin:auto;
+}
+.round img{
+  border-radius: 50%;
+  max-width:220px;
+  -webkit-box-shadow: -2.5px 2.5px 0px 2.5px rgba(225,218,194,1);
+-moz-box-shadow: -2.5px 2.5px 0px 2.5px rgba(225,218,194,1);
+box-shadow: -2.5px 2.5px 0px 2.5px rgba(225,218,194,1);
+}
+
+@media (max-width: 768px){
+.disp-left p{
+text-align: left;
+font-size: 15px;
+}
+.disp-right p{
+text-align: left;
+font-size: 15px;
+}
+.post-thumbnail-image{
+
+  margin:20px auto;
+}
+h1.side-heading-sm{
+  font-size: 23px;
+  margin-top: 20px;
+}
+.bottom-line{
+  border-bottom:solid 1px #edece6;
+  -webkit-box-shadow:0px 1px 1px #fff;
+ -moz-box-shadow:0px 1px 1px #fff;
+ box-shadow:0px 1px 1px #fff;
+}
+.bottom-line:last-child{
+  border-bottom:none;
+  -webkit-box-shadow:none;
+ -moz-box-shadow:none;
+ box-shadow:none;
+}
 }

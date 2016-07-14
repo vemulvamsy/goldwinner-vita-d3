@@ -28,7 +28,7 @@ function goldwinner()  {
 
   //custom post-thumbnail for base
 	if ( function_exists( 'add_theme_support' ) ) {
-    	set_post_thumbnail_size( 350, 220, true ); // default Post Thumbnail dimensions (cropped)
+    	set_post_thumbnail_size( 370, 445, false ); // default Post Thumbnail dimensions (cropped)
 	    // additional image sizes
 	    // delete the next line if you do not need additional image sizes
 

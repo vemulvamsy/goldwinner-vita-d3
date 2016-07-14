@@ -18,11 +18,12 @@
 <!-- end of banner section -->
 
 <!-- FAQs Block -->
-<section id="knowmore-page-kaleesuwari">
+<section id="faqs-section">
 	<div class="container"> 
-		<div class="top-margin-50 bottom-margin-50">
+		<div class="margin-top-50 margin-bottom-50 ">
 			<div class="row">
-				<h1 class="page-header-black">FAQs</h1>
+				<h1 class="side-heading-big text-center color-black">FAQ's</h1>
+				<div class="red-under-line-center"></div>
 				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12"> 
 					<div id="demo_wrap">
             			<div class="accordion1-group" data-behavior="accordion">
@@ -51,7 +52,7 @@
 			</div><!-- end of row -->
 		</div><!-- end of margins -->
 	</div><!-- end of container -->
-</section>
+</section><!-- end of faqs-section -->
 
 <?php echo get_page_template_slug( $post->ID ); ?>
 <?php get_footer(); ?>
