@@ -40,7 +40,7 @@
 									<?php the_content(); ?>
 									<?php
 										$args=array(
-										  'name' => 'vita-d3',
+										  'name' => 'vitamin-d',
 										  'post_type' => 'page',
 										  'post_status' => 'publish'
 										);

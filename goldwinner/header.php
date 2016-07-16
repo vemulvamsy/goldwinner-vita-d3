@@ -31,7 +31,7 @@
 </head>
 
 <body <?php body_class(( array( "pushmenu-push") )); ?>>
-<?php if ((is_page("faqs") || is_page("faq-s"))) { ?>
+<?php if ((is_page("faqs") || is_page("faq-s") || is_page("quiz"))) { ?>
 	<header class="header header-style" >
 <?php } else { ?>
 	<header class="header">

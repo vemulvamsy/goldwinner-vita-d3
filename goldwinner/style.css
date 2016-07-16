@@ -1056,21 +1056,40 @@ font-size: 13px;
 font-family: 'Varela Round', sans-serif;
 font-weight: 400;
 text-decoration:none;
-color:rgba(255,255,255,0.7);
--webkit-transition: all 0.3s;
--moz-transition: all 0.3s;
--ms-transition: all 0.3s;
--o-transition: all 0.3s;
-transition: all 0.3s; 
+color:rgba(255,255,255,1);
+padding:0px 0px 2px 0px;
+position:relative;
 }
 header nav.main-nav ul li a:hover{
 color:rgba(255,255,255,1);
 text-decoration:none;
 }
+header nav.main-nav ul li a:after{
+position:absolute;
+bottom:0;
+left:50%;
+height:1px;
+width:0%;
+background-color:#fff;
+display:block;
+content:'';
+-webkit-transition: 0.3s;
+-moz-transition: 0.3s;
+-ms-transition:  0.3s;
+-o-transition:  0.3s;
+transition:0.3s;
+top:18px;
+}
+
+header nav.main-nav ul li a:hover:after{
+    left:0;
+    width:100%;
+}
 header nav.main-nav ul li.current-menu-item  a:link,
 header nav.main-nav ul li.current-menu-item  a:visited{
 color:#fff;
 text-decoration:none;
+border-bottom: 1px solid #fff;
 }
 
 header.smaller{
@@ -1329,6 +1348,12 @@ margin-top:90px;
 .margin-top-100{
 margin-top:100px;
 }
+.margin-top-120{
+margin-top:120px;
+}
+.margin-top-110{
+margin-top:110px;
+}
 .margin-top-180{
 margin-top:180px;
 }
@@ -1506,9 +1531,9 @@ a.know-more-button:link{
   font-family: 'Varela Round', sans-serif;
   font-weight: 400;
   border-radius:8px;
-  -webkit-box-shadow: 0px 5px 10px 0px rgba(184,183,180,1);
-  -moz-box-shadow: 0px 5px 10px 0px rgba(184,183,180,1);
-  box-shadow: 0px 5px 10px 0px rgba(184,183,180,1);
+  -webkit-box-shadow: 0px 5px 10px 0px rgba(184,183,180,0.75);
+  -moz-box-shadow: 0px 5px 10px 0px rgba(184,183,180,0.75);
+  box-shadow: 0px 5px 10px 0px rgba(184,183,180,0.75);
 }
 a.know-more-button:hover{
   -webkit-box-shadow: 0px 0px 5px 0px rgba(164,164,161,1);
@@ -1600,6 +1625,19 @@ a#home-quiz:hover{
 .home-right-content{
 margin:70px 15px 50px 15px;
 }
+
+.margin-sm-top-80{
+ margin-top: 50px; 
+}
+.margin-sm-top-40{
+ margin-top: 40px; 
+}
+.margin-sm-top-30{
+ margin-top: 30px; 
+}
+.margin-sm-top-20{
+ margin-top: 20px; 
+}
 }
 @media (max-width: 550px){
 p.content{
@@ -1619,9 +1657,6 @@ font-size: 22px;
   margin:50px 10px 50px 10px;
 }
 
-.margin-sm-top-80{
- margin-top: 50px; 
-}
 h1#do-you-know{
 font-size: 30px;
 line-height: 8px;
@@ -1637,6 +1672,7 @@ font-size:40px;
 h2#indian-lack{
 font-size:18px;
 line-height: 1px;
+margin-top:-20px;
 }
 
 }
@@ -1651,6 +1687,10 @@ margin-top:90px;
 width:100%;
 background: #f7f6f2;
 }
+#enquiry-section{
+background: #f7f6f2 url('image/flower.png') right bottom no-repeat;
+}
+
 .accordion1-group { margin: 0 0 30px }
 
 .accordion1-group { margin: 0 }
@@ -1742,7 +1782,114 @@ transition: all 0.3s;
   line-height:20px;
 }
 
+/*============= contact form ======================*/
+
+
+.contact-from-block{
+  width:100%;
+  max-width:600px;
+  margin:40px auto 0px auto;
+  display: block;
+}
+.contact-from-block p{
+  color: #222;
+  font-size: 14px;
+  font-family: 'Varela Round', sans-serif;
+  line-height:20px;
+}
+.contact-from-block span input,
+.contact-from-block span textarea{
+  width:100%;
+  resize:none;
+}
+.contact-from-block span[role="alert"]{
+  color: #f04e23;
+  font-size: 12px;
+  font-family: 'Varela Round', sans-serif;
+  line-height:15px;
+}
+div[role="alert"]{
+  margin:0;
+  font-size: 12px;
+  font-family: 'Varela Round', sans-serif;
+  line-height:15px;
+  border:none;
+  color:#f04e23;
+}
+div.wpcf7-validation-errors{
+  color:#ffd003;
+}
+div.wpcf7-mail-sent-ok{
+  color:#52D017;
+}
+::-webkit-input-placeholder {
+   color: rgba(0,0,0,0.3);
+}
+
+:-moz-placeholder { /* Firefox 18- */
+color: rgba(0,0,0,0.3); 
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+color: rgba(0,0,0,0.3);
+}
+
+:-ms-input-placeholder {  
+color: rgba(0,0,0,0.3);
+}
+
+input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
+    background: #fff !important;
+    color: rgb(0,0,0) !important;
+      -webkit-box-shadow: 0px 2.5px 7px 0px rgba(184,183,180,0.5) !important;
+}
+input, button, select, textarea {font-family: 'Varela Round', sans-serif;
+font-size:14px;
+font-weight:normal;
+color:#000;
+resize: none;
+background:#fff;
+border:none;
+padding:12px 20px;
+position:relative;
+display:block;
+outline:0;
+margin:10px 0;
+border-radius: 5px;
+  -webkit-box-shadow: 0px 2.5px 7px 0px rgba(184,183,180,0.5);
+  -moz-box-shadow: 0px 2.5px 7px 0px rgba(184,183,180,0.5);
+  box-shadow: 0px 2.5px 7px 0px rgba(184,183,180,0.5);
+
+}
+textarea{
+  height:120px;
+}
+input[type="submit"]{
+  padding:10px 35px;
+  color:#000;
+  background:#ffd003;
+  font-size: 14px;
+  font-family: 'Varela Round', sans-serif;
+  font-weight: 400;
+  border-radius:5px;
+  -webkit-box-shadow: 0px 5px 10px 0px rgba(184,183,180,0.7);
+  -moz-box-shadow: 0px 5px 10px 0px rgba(184,183,180,0.7);
+  box-shadow: 0px 5px 10px 0px rgba(184,183,180,0.7);
+
+}
+
+input[type="submit"]:hover{
+  -webkit-box-shadow: 0px 0px 5px 0px rgba(164,164,161,1);
+  -moz-box-shadow: 0px 0px 5px 0px rgba(164,164,161,1);
+  box-shadow: 0px 0px 5px 0px rgba(164,164,161,1);
+}
+
 @media (max-width: 600px){
+#enquiry-section{
+background: #f7f6f2 url('image/flower.png') right bottom no-repeat;
+background-size: 200px auto;
+}
+
 #faqs-section{
 margin-top:74px;
 }  
@@ -1841,5 +1988,338 @@ h1.side-heading-sm{
   -webkit-box-shadow:none;
  -moz-box-shadow:none;
  box-shadow:none;
+}
+}
+
+
+/*======================================================
+                   VITA D3 PAGE
+========================================================*/
+.vitad3-in-blocks{
+  margin:0px 30px;
+}
+.float-left-vitad3{
+float:left;
+}
+.float-left-vitad3 img{
+  width:65px;
+  display: block;
+}
+.symptoms-head{
+  width:100%;
+  max-width:400px;
+}
+h2.small-heading,
+h2.small-heading-sources{
+text-align: left;
+color: #000;
+font-family: 'Varela Round', sans-serif;
+font-size: 20px;
+font-weight: bold;
+margin-left:5px;
+}
+p.small-heading-caption,
+p.small-heading-caption-sources{
+text-align: left;
+color: #000;
+font-family: 'Varela Round', sans-serif;
+font-size: 12px;
+margin-left:5px;
+line-height: 15px;
+}
+h2.small-heading-sources{
+text-align: center;
+font-size: 30px;
+text-transform: uppercase;
+}
+p.small-heading-caption-sources{
+text-align: center;
+max-width: 350px;
+margin: auto;
+}
+ul.vita-d3{
+  display: block;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  list-style: none;
+}
+ul.vita-d3 li{
+text-align: left;
+color: #000;
+font-family: 'Varela Round', sans-serif;
+font-size: 15px;
+margin-left:5px;
+line-height: 25px;
+margin-top:20px;
+text-indent: 0px;
+}
+ul.vita-d3 li:before {
+    content: url("image/dot.png");
+    color: red; /* or whatever color you prefer */
+    font-size: 25px;
+    vertical-align: bottom;
+}
+
+.sources-icon-bar-in{
+margin:0px 0px 40px 0px;
+}
+.sources-icon-bar-in div{
+display: block;
+width: 100%;
+border-right: solid 1px #f04e23;
+}
+.sources-icon-bar-in div.no-right-border{
+border-right: none;
+}
+.sources-icon-bar-in img{
+margin:auto;
+display: block;
+height: 100px;
+width: auto;
+}
+.sources-icon-bar-in p{
+  margin:20px 10px 0px 10px;
+  text-align: center;
+  color: #000;
+font-family: 'Varela Round', sans-serif;
+font-size: 14px;
+}
+#knowmore-section{
+width: 100%;
+display: block;
+background: #f15a22;
+-webkit-box-shadow: 0px 5px 10px 0px rgba(173,57,25,1);
+-moz-box-shadow: 0px 5px 10px 0px rgba(173,57,25,1);
+box-shadow: 0px 5px 10px 0px rgba(173,57,25,1);
+position: relative;
+z-index: 99;
+}
+.align-center{
+  margin:auto;
+  display: block;
+}
+a.know-more-button-vitad3,
+a.know-more-button-vitad3:link,
+a.know-more-button-vitad3:visited{
+  margin: auto;
+  text-align: center;
+  display: block;
+  padding:10px 0px;
+  width:140px;
+  text-decoration:none;
+  color:#000;
+  background:#ffd003;
+  font-size: 15px;
+  font-family: 'Varela Round', sans-serif;
+  font-weight: bold;
+  border-radius:8px;
+-webkit-box-shadow: 0px 5px 10px 0px rgba(173,57,25,1);
+-moz-box-shadow: 0px 5px 10px 0px rgba(173,57,25,1);
+box-shadow: 0px 5px 10px 0px rgba(173,57,25,1);
+}
+a.know-more-button-vitad3:hover{
+-webkit-box-shadow: 0px 0px 5px 0px rgba(173,57,25,1);
+-moz-box-shadow: 0px 0px 5px 0px rgba(173,57,25,1);
+box-shadow: 0px 0px 5px 0px rgba(173,57,25,1);
+}
+#gw-vita-d3{
+  display: block;
+  width: 100%;
+  max-width: 300px;
+  margin: auto;
+}
+@media (max-width:1200px){
+.symptoms-head{
+width:67%;
+}
+}
+@media (max-width: 990px){
+  .sources-icon-bar-in div.no-right-border-md{
+    border-right:none;
+  }
+}
+@media (max-width: 768px){
+.vitad3-in-blocks{
+margin:0px;
+}
+.float-left-vitad3 img{
+  width:60px;
+  display: block;
+}
+.symptoms-head{
+  width:70%;
+}
+h2.small-heading,
+h2.small-heading-sources{
+font-size: 17px;
+}
+p.small-heading-caption,
+p.small-heading-caption-sources{
+font-size: 12px;
+}
+h2.small-heading-sources{
+text-align: center;
+font-size: 30px;
+text-transform: uppercase;
+}
+p.small-heading-caption-sources{
+text-align: center;
+max-width: 350px;
+margin: auto;
+}
+.sources-icon-bar-in{
+margin:0px 0px 40px 0px;
+display: block;
+}
+.sources-icon-bar-in div{
+border-right: none;
+}
+}
+
+
+/*======================================================
+                   QUIZ PAGE
+========================================================*/
+#quiz-section{
+background: #f7f6f2 url('image/flower.png') right bottom no-repeat;
+}
+.quiz-block{
+  margin:125px 10px 80px 10px;
+}
+.min-height-600{
+  min-height: 330px;
+}
+@media (min-width: 1600px){
+.min-height-600{
+  min-height: 550px;
+} 
+}
+ul#instructions-ul{
+  display: block;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  list-style: none;
+}
+ul#instructions-ul li{
+text-align: left;
+color: #000;
+font-family: 'Varela Round', sans-serif;
+font-size: 15px;
+margin-left:5px;
+line-height: 25px;
+text-indent: 0px;
+}
+ul#instructions-ul li:before {
+    content: url("image/dot.png");
+    color: red; /* or whatever color you prefer */
+    font-size: 25px;
+    vertical-align: text-bottom;
+}
+a.qmn_btn,a.qmn_btn:link,a.qmn_btn:visited {
+  padding:10px 25px;
+  text-decoration:none;
+  color:#000;
+  background:#ffd003;
+  font-size: 14px;
+  font-family: 'Varela Round', sans-serif;
+  font-weight: bold;
+  border-radius:8px;
+  margin-top: 15px;
+  -webkit-box-shadow: 0px 5px 10px 0px rgba(184,183,180,0.75);
+  -moz-box-shadow: 0px 5px 10px 0px rgba(184,183,180,0.75);
+  box-shadow: 0px 5px 10px 0px rgba(184,183,180,0.75);
+  text-shadow:none; 
+}
+a.qmn_btn:hover{
+  -webkit-box-shadow: 0px 0px 3px 0px rgba(164,164,161,0.5);
+  -moz-box-shadow: 0px 0px 3px 0px rgba(164,164,161,0.5);
+  box-shadow: 0px 0px 3px 0px rgba(164,164,161,0.5);
+}
+.quiz_section{
+  margin-top:50px;
+}
+.quiz_section span{
+  color:#000;
+  line-height: 25px;
+}
+.qmn_mc_answer_wrap{
+  color:#000;
+}
+.qmn_radio_answers{
+  margin-top:20px;
+}
+.qmn_error_message{
+  color:#f04e23;
+  margin:20px 0;
+}
+label{
+  display: inline-block;
+   font-size: 16px;
+  font-family: 'Varela Round', sans-serif;
+  font-weight: normal;
+}
+input[type="radio"]{
+  display: inline-block;
+  background: #f7f6f2;
+  border: none;
+  outline: none;
+  margin:10px 0;
+  box-shadow: none;
+}
+.quiz_section  input[type="text"]{
+width:100%;
+max-width:400px;
+}
+.quiz_section br,.qmn_results_page br{
+display: none;
+}
+.result-page-data, .thankyou, .score, .share, .download-cert{
+font-size: 22px;
+font-family: 'Varela Round', sans-serif;
+font-weight: bold;
+color:#bb2930;
+line-height: 30px;
+margin:15px 0;
+}
+.thankyou{
+font-size: 22px;
+font-weight: bold;
+color:#000;
+}
+.score{
+font-size: 30px;
+font-weight: normal;
+color:#f05a22;
+}
+.score span{
+  font-weight: bold;
+}
+.share{
+font-size: 20px;
+font-weight: bold;
+color:#000;
+margin-bottom: 8px;
+}
+.download-cert, .download-cert a, .download-cert a:link{
+font-size: 23px;
+color:#000;  
+font-weight: normal;
+}
+.download-cert a:hover{
+text-decoration: underline;
+}
+.mlw_quiz_form br{
+  display: none;
+}
+
+@media (max-width: 600px){
+#quiz-section{
+background: #f7f6f2 url('image/flower.png') right bottom no-repeat;
+background-size: 200px auto;
+}  
+.quiz-block{
+margin:50px 10px 80px 10px;
 }
 }

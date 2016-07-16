@@ -29,5 +29,9 @@ function paracontent( $atts, $content = null ) {
 }
 add_shortcode('paracontent', 'paracontent');
 
+function sources_icon_bar_in( $atts, $content = null ) {
+   return '<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3"><div class="sources-icon-bar-in">'.do_shortcode($content).'</div></div>';
+}
+add_shortcode('sources_icon_bar_in', 'sources_icon_bar_in');
 
 ?>
