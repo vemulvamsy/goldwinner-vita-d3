@@ -1,4 +1,5 @@
 <?php
+session_start(); 
 /**
  * The template for displaying the header
  *
@@ -13,6 +14,8 @@
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?> class="no-js">
 <head>
+	<title><?php bloginfo('name'); ?> | <?php wp_title(); ?></title>
+	<link rel="shortcut icon" href="<?php echo esc_url( get_template_directory_uri() ); ?>/image/icon.png" type="image/x-icon">
 	<meta http-equiv="content-type" content="text/html;" charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="resource-type" content="document" />
 	<meta http-equiv="content-language" content="en-us" />
@@ -26,12 +29,25 @@
 	  <?php endif; ?>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 	
+<!-- start of goolge analitics code -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-81159647-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<!-- end of goolge analitics code -->	
 	
 <?php wp_head(); ?>
 </head>
 
 <body <?php body_class(( array( "pushmenu-push") )); ?>>
-<?php if ((is_page("faqs") || is_page("faq-s") || is_page("quiz"))) { ?>
+
+<?php if (is_page("faqs") || is_page("faq-s")) { ?>
 	<header class="header header-style" >
 <?php } else { ?>
 	<header class="header">
@@ -57,3 +73,14 @@
 	
 </header>
 <div class="body-block">
+<?php
+$args=array(
+  'name' => 'quiz',
+  'post_type' => 'page',
+  'post_status' => 'publish'
+);
+$quiz = get_posts($args);
+if( $quiz and !is_page("quiz")) {
+?>
+<a href="<?php the_permalink($quiz[0]->ID); ?>" id="float-but">Check Your Vita D3 IQ here </a>
+<?php } ?>

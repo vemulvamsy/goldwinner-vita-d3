@@ -52,7 +52,7 @@
 			</div><!-- end of row -->
 		</div><!-- end of margins -->
 	</div><!-- end of container -->
-	
+
 </section><!-- end of faqs-section -->
 
 <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); endwhile; endif; ?> <!-- this code is to find the post id of this page again for sub page display -->
@@ -61,8 +61,8 @@
 	<div class="container"> 
 		<div class=" margin-bottom-50 ">
 			<div class="row">
-				<h1 class="side-heading text-center color-black">Reach Us </h1>
-				<div class="red-under-line-center"></div>
+				<h1 class="side-heading text-center color-black">Have further queries? </h1>
+				<p class="text-center color-black ">Reach us for additional information </p>
 				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12"> 
 					<div class="contact-from-block">
 						<?php

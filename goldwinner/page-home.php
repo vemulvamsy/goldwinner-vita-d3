@@ -80,7 +80,7 @@
 					<div >
 						<div class="home-right-background" >
 							<div class="home-right-content" >
-								<h1 id="do-you-know">Do you know?</h1>
+								<h1 id="do-you-know">Did you know?</h1>
 								<h1 id="prec-80">80<span>%</span></h1>
 								<h2 id="indian-lack">of Indians lack vitamin D</h2>
 
@@ -108,13 +108,14 @@
 
 <section id="tvc-video-section">
 	<div class="container-fluid">
-		<div class='embed-container'><iframe width="100%" height="auto" src="https://www.youtube-nocookie.com/embed/sr9NXNtT3BY?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe></div> 
+		<div class='embed-container'><iframe width="100%" height="auto" src="https://www.youtube.com/embed/XAwdg1_pIXE?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe></div> 
 		<!--<div class="video-container"><iframe width="100%" height="auto" src="https://www.youtube-nocookie.com/embed/U7f6gvTxwIU?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe></div> -->
 	</div><!-- end of container fluid -->
 </section><!-- end of tvc-video-section -->
 
  
-
+<?php //session_start(); 
+unset($_SESSION['extuser']); ?>
 <?php echo get_page_template_slug( $post->ID ); ?>
 <?php get_footer(); ?>
 

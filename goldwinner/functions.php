@@ -86,7 +86,7 @@ add_filter('the_content', 'display_featured_image');*/
 function base_scripts() {
 		wp_enqueue_style( 'font-varela', '//fonts.googleapis.com/css?family=Varela+Round' );
 //slider css
-        wp_enqueue_style( 'base-slider', get_template_directory_uri() . '/css/slider.css' );
+    //    wp_enqueue_style( 'base-slider', get_template_directory_uri() . '/css/slider.css' );
 	//bootstrap css
 	wp_enqueue_style( 'bootstrap-css', get_template_directory_uri() . '/css/bootstrap.min.css' );
 
@@ -108,7 +108,7 @@ function base_scripts() {
 		wp_enqueue_script( 'bootstrap-js', get_template_directory_uri() . '/js/bootstrap.min.js',true );
 
     // slider js
-		wp_enqueue_script( 'bootstrap-slider', get_template_directory_uri() . '/js/slider.js', true );
+	//	wp_enqueue_script( 'bootstrap-slider', get_template_directory_uri() . '/js/slider.js', true );
 
 	// Accordion js
 		wp_enqueue_script( 'simpleaccordion', get_template_directory_uri() . '/js/jquery.simpleaccordion.js', true );	
@@ -369,8 +369,11 @@ return '<div class="googlemap">
 }
 /* [googlemap src="google_map_url"] [googlemap width="600" height="250" src="google_map_url"] */
 add_shortcode("googlemap", "googlemap");
+
+
 /* Minifies HTML */
 /* (source: http://www.intert3chmedia.net/2011/12/minify-html-javascript-css-without.html) */
+
 class WP_HTML_Compression
 {
 	// Settings
@@ -508,7 +511,7 @@ add_action('get_header', 'wp_html_compression_start');
         add_action( 'init', create_function( '$a', "remove_action( 'init', 'wp_version_check' );" ), 2 );
         add_filter( 'pre_option_update_core', create_function( '$a', "return null;" ) );
        }
-
+//here compression code end
 
 			 /* Hide WP version strings from scripts and styles
 			  * @return {string} $src

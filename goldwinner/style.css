@@ -26,6 +26,11 @@ This theme, like WordPress, is licensed under the GPL.
    v2.0 | 20110126
    License: none (public domain)
 */
+@font-face {
+  font-family: 'HelveticaRounded';
+  src: url('fonts/HelveticaRounded-BoldCond.otf');
+}
+
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -1001,9 +1006,6 @@ transition: height 0.3s;
 margin:0px;
 padding:0px;  
 background:#f04e23; 
--webkit-box-shadow: 0px 5px 10px 0px rgba(184,183,180,1);
--moz-box-shadow: 0px 5px 10px 0px rgba(184,183,180,1);
-box-shadow: 0px 5px 10px 0px rgba(184,183,180,1);
 }
 header div#logo{
 float:left;
@@ -1066,7 +1068,7 @@ text-decoration:none;
 }
 header nav.main-nav ul li a:after{
 position:absolute;
-bottom:0;
+bottom:-1px;
 left:50%;
 height:1px;
 width:0%;
@@ -1078,7 +1080,7 @@ content:'';
 -ms-transition:  0.3s;
 -o-transition:  0.3s;
 transition:0.3s;
-top:18px;
+
 }
 
 header nav.main-nav ul li a:hover:after{
@@ -1168,7 +1170,7 @@ header nav.main-nav ul li a{
 text-align:center;
 display:block;
 width:100%;
-color:#000;
+color:#fff;
 background:rgba(240,78,35,0.9);
 border-bottom:solid 1px #571503;
 height:50px;
@@ -1182,6 +1184,10 @@ color:#000;
 text-decoration:none;
 background:rgba(240,78,35,1)l
 }
+header nav.main-nav ul li a:after{
+display:none;
+}
+
 header.smaller{
 height:75px;
 background:#f04e23;
@@ -1413,6 +1419,7 @@ h1.heading-text{
 font-size: 35px;
 font-family: 'Varela Round', sans-serif;
 font-weight: 400;
+line-height: 40px;
 }
 h1.side-heading{
 font-size: 30px;
@@ -1899,7 +1906,7 @@ width: 100%;
 }
 h1.side-heading-big{
 font-size: 40px;
-line-height: 35px;  
+line-height: 45px;  
 }
 .red-under-line-center{
   width:65px;
@@ -1933,7 +1940,7 @@ background: #f7f6f2;
 .disp-left p{
 text-align: left;
 color: #222;
-font-size: 18px;
+font-size: 17px;
 font-family: 'Varela Round', sans-serif;
 line-height:29px;
 margin-top: 20px;
@@ -2026,6 +2033,7 @@ font-family: 'Varela Round', sans-serif;
 font-size: 12px;
 margin-left:5px;
 line-height: 15px;
+margin-top: 5px;
 }
 h2.small-heading-sources{
 text-align: center;
@@ -2185,7 +2193,7 @@ border-right: none;
 background: #f7f6f2 url('image/flower.png') right bottom no-repeat;
 }
 .quiz-block{
-  margin:125px 10px 80px 10px;
+  margin:50px 10px 80px 10px;
 }
 .min-height-600{
   min-height: 330px;
@@ -2268,30 +2276,37 @@ input[type="radio"]{
   margin:10px 0;
   box-shadow: none;
 }
-.quiz_section  input[type="text"]{
+.quiz_section  input[type="text"], textarea#user_addr_v{
 width:100%;
 max-width:400px;
+}
+textarea#user_addr_v{
+  height:100px;
 }
 .quiz_section br,.qmn_results_page br{
 display: none;
 }
-.result-page-data, .thankyou, .score, .share, .download-cert{
-font-size: 22px;
+.result-page-data, .result-page-data2, .thankyou, .score, .share, .download-cert{
+font-size: 20px;
 font-family: 'Varela Round', sans-serif;
-font-weight: bold;
-color:#bb2930;
+font-weight: normal;
+color:#000;
 line-height: 30px;
 margin:15px 0;
 }
+.result-page-data2{
+  color:#444;
+  font-size: 21;
+}
 .thankyou{
-font-size: 22px;
-font-weight: bold;
+font-size: 18px;
+font-weight: normal;
 color:#000;
 }
 .score{
-font-size: 30px;
-font-weight: normal;
-color:#f05a22;
+font-size: 25px;
+font-weight: bold;
+color:#000;
 }
 .score span{
   font-weight: bold;
@@ -2303,15 +2318,118 @@ color:#000;
 margin-bottom: 8px;
 }
 .download-cert, .download-cert a, .download-cert a:link{
-font-size: 23px;
-color:#000;  
+font-size: 16px; 
 font-weight: normal;
+color:#f04e23;
 }
 .download-cert a:hover{
 text-decoration: underline;
 }
 .mlw_quiz_form br{
   display: none;
+}
+
+.results-page{
+  background:transparent url('image/result_back.png') top center no-repeat;
+  background-size: 70% auto;
+  width:100%;
+  max-width:950px;
+  margin:auto;
+  display: block;
+  overflow: hidden;
+}
+.score, .congrats, .content1, .content2, .certificate a{
+font-family: 'HelveticaRounded';
+text-align: center; 
+font-weight: bold;
+margin: 0;
+padding: 0;
+color:#000;
+font-size: 25px;
+}
+.score{
+font-size: 200px;
+line-height: 200px;
+color: #ed1c24;
+}
+.congrats{
+font-size: 55px;
+color:#f04e23;
+line-height: 80px;
+}
+.content1{
+  font-size: 28px;
+  color:#000;
+  line-height: 35px;
+}
+.content2{
+  font-size: 28px;
+  color:#f04e23;
+  line-height: 35px;
+}
+.certificate a, .certificate a:link{
+  font-size: 24px;
+  color:#000;
+  line-height: 35px;
+}
+.certificate a:hover{
+  color:#f04e23;
+  
+}
+#steth{
+  margin: auto;
+  display: block;
+  width:200px;
+  height: auto;
+}
+
+#facebook{
+background:transparent url('image/facebook1.png') center center no-repeat;
+width:40px;
+height: 40px;
+background-size: 40px 40px;
+padding: 0;
+color:transparent;
+}
+#twitter{
+background:transparent url('image/twitter1.png') center center no-repeat;
+padding: 0;
+width:40px;
+height: 40px;
+background-size: 40px 40px;
+color:transparent;
+}
+#linkedin{
+background:transparent url('image/linkedin1.png') center center no-repeat;
+padding: 0;
+width:40px;
+height: 40px;
+background-size: 40px 40px;
+color:transparent;
+margin-left: 5.5px;
+}
+#pinterest{
+background:transparent url('image/pinterest1.png') center center no-repeat;
+padding: 0;
+width:40px;
+height: 40px;
+background-size: 40px 40px;
+color:transparent;
+margin-left: 5.5px;
+}
+#whatsapp{
+background:transparent url('image/whatsapp1.png') center center no-repeat;
+padding: 0;
+width:40px;
+height: 40px;
+background-size: 40px 40px;
+color:transparent;
+}
+#err-phone{
+  color:#f05a22;
+  font-size: 14px;
+font-family: 'Varela Round', sans-serif;
+font-weight: normal;
 }
 
 @media (max-width: 600px){
@@ -2322,4 +2440,74 @@ background-size: 200px auto;
 .quiz-block{
 margin:50px 10px 80px 10px;
 }
+.results-page{
+  background-size: 100% auto;
+}
+.score, .congrats, .content1, .content2, .certificate a{
+font-size: 21px;
+}
+.score{
+font-size: 100px;
+line-height: 100px;
+}
+.congrats{
+font-size: 35px;
+}
+.content1{
+  font-size: 21px;
+}
+.content2{
+  font-size: 21px;
+}
+.certificate a, .certificate a:link{
+  font-size: 18px;
+}
+
+}
+
+#float-but{
+  font-family: 'Varela Round', sans-serif;
+text-align: center; 
+font-weight: normal;
+  position: fixed;
+  font-size:12px;
+  line-height: 15px;
+  color:#fff;
+  bottom:50%;
+  right: 0px;
+  width:65px;
+  padding:30px 5px 30px 15px;
+  background: #bb2930;
+  z-index:999999;
+  border-top-left-radius:50%;
+  border-bottom-left-radius:50%;
+}
+@media (max-width: 600px){
+  #float-but{
+  position: fixed;
+  bottom:0px;
+  left: 0px;
+  width: 100%;
+  height:auto;
+  padding:10px 0px;
+  border-top-left-radius:0;
+  border-bottom-left-radius:0;
+  display: block;
+}
+#footer-data{
+margin-bottom:30px;
+}
+}
+
+.error_msg_v{
+  font-family: 'Varela Round', sans-serif;
+text-align: left; 
+font-weight: normal;
+  font-size:12px;
+  color:#f15922;
+}
+.change-font{
+ font-family: 'HelveticaRounded';
+text-align: center; 
+padding:10px 30px; 
 }

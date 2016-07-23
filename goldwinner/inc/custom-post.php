@@ -232,7 +232,7 @@ function goldwinner_vita_d3() {
 add_action( 'init', 'goldwinner_vita_d3', 0 );
 
 
-
+/*
 //slider
 // Register Custom Post Type
 function goldwinner_slider() {
@@ -288,7 +288,7 @@ function goldwinner_slider() {
 
 }
 add_action( 'init', 'goldwinner_slider', 0 );
-
+*/
 /*
 // Register Custom Taxonomy
 function goldwinner_producttype() {
@@ -434,5 +434,82 @@ function custom_post_homepage_data() {
 */
 
 add_action( 'init', 'custom_post_homepage_data', 0 );
+
+
+
+
+/* custom post to maintain error data for existing user */
+function quiz_error_message() {
+
+// Set UI labels for Custom Post Type
+	$labels = array(
+		'name'                => _x( 'Quiz Error Message', 'Post Type General Name', 'goldwinner' ),
+		'singular_name'       => _x( 'Quiz Error Message', 'Post Type Singular Name', 'goldwinner' ),
+		'menu_name'           => __( 'Quiz Error Message', 'goldwinner' ),
+		'parent_item_colon'   => __( 'Parent Quiz Error Message', 'goldwinner' ),
+		'all_items'           => __( 'All Quiz Error Message', 'goldwinner' ),
+		'view_item'           => __( 'View Quiz Error Message', 'goldwinner' ),
+		'add_new_item'        => __( 'Add New Quiz Error Message', 'goldwinner' ),
+		'add_new'             => __( 'Add New', 'goldwinner' ),
+		'edit_item'           => __( 'Edit Quiz Error Message', 'goldwinner' ),
+		'update_item'         => __( 'Update Quiz Error Message', 'goldwinner' ),
+		'search_items'        => __( 'Search Quiz Error Message', 'goldwinner' ),
+		'not_found'           => __( 'Not Found', 'goldwinner' ),
+		'not_found_in_trash'  => __( 'Not found in Trash', 'goldwinner' ),
+		'featured_image'        => __( 'Featured Image', 'goldwinner' ),
+		'set_featured_image'    => __( 'Set featured image', 'goldwinner' ),
+		'remove_featured_image' => __( 'Remove featured image', 'goldwinner' ),
+		'use_featured_image'    => __( 'Use as featured image', 'goldwinner' ),
+		'insert_into_item'      => __( 'Insert into Quiz Error Message', 'goldwinner' ),
+		'uploaded_to_this_item' => __( 'Uploaded to this Quiz Error Message', 'goldwinner' ),
+		'items_list'            => __( 'Quiz Error Message list', 'goldwinner' ),
+		'items_list_navigation' => __( 'Quiz Error Message list navigation', 'goldwinner' ),
+		'filter_items_list'     => __( 'Filter Quiz Error Message list', 'goldwinner' ),
+	);
+
+
+	
+// Set other options for Custom Post Type
+	
+	$args = array(
+		'label'               => __( 'Quiz Error Message', 'goldwinner' ),
+		'description'         => __( 'Quiz Error Message news and reviews', 'goldwinner' ),
+		'labels'              => $labels,
+		// Features this CPT supports in Post Editor   title', 'editor', 'excerpt', 'author', 'thumbnail', 'trackbacks', 'revisions', 'custom-fields', 'page-attributes
+		'supports'            => array( 'title', 'editor', 'excerpt', 'author', 'thumbnail', 'trackbacks', 'comments', 'revisions', 'custom-fields', 'page-attributes', ),
+		// You can associate this CPT with a taxonomy or custom taxonomy. 
+		'taxonomies'          => array( 'genres' ),
+		/* A hierarchical CPT is like Pages and can have
+		* Parent and child items. A non-hierarchical CPT
+		* is like Posts.
+		*/	
+		'hierarchical'        => true,
+		'public'              => true,
+		'show_ui'             => true,
+		'show_in_menu'        => true,
+		'show_in_nav_menus'   => true,
+		'show_in_admin_bar'   => true,
+		'menu_position'       => 5,
+		'can_export'          => true,
+		'has_archive'         => true,
+		'exclude_from_search' => false,
+		'publicly_queryable'  => true,
+		'capability_type'     => 'page',
+	);
+	
+	// Registering your Custom Post Type
+	register_post_type( 'Quiz Error Message', $args );
+
+}
+
+/* Hook into the 'init' action so that the function
+* Containing our post type registration is not 
+* unnecessarily executed. 
+*/
+
+add_action( 'init', 'quiz_error_message', 0 );
+
+
+
 
  ?>
